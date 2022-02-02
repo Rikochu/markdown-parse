@@ -41,5 +41,13 @@ public class MarkdownParseTest {
         links4.add("https://ucsd-cse15l-w22.github.io/week/week3/");
         links4.add("some-page.html");
         assertEquals(links4, links2);
+
+        Path fileName3 = Path.of("imagefile.md");
+        String contents3 = Files.readString(fileName3);
+        ArrayList<String> links6 = MarkdownParse.getLinks(contents3);
+        ArrayList<String> links7 = new ArrayList<String>();
+        links7.add("https://something.com");
+        links7.add("some-page.html");
+        assertEquals(links7, links6);
     }
 }
