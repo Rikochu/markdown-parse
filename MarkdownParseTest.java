@@ -49,17 +49,9 @@ public class MarkdownParseTest {
         links7.add("https://something.com");
         links7.add("some-page.html");
         assertEquals(links7, links6);
-
-        Path fileName4 = Path.of("snippet1.md");
-        String contents4 = Files.readString(fileName4);
-        ArrayList<String> links8 = MarkdownParse.getLinks(contents4);
-        ArrayList<String> links9 = new ArrayList<String>();
-        links9.add("url.com");
-        links9.add("`google.com");
-        links9.add("google.com");
-        assertEquals(links9, links8);  
     }
 
+    @Test 
     public void snippet1Test() throws IOException {
         Path fileName4 = Path.of("snippet1.md");
         String contents4 = Files.readString(fileName4);
@@ -71,6 +63,7 @@ public class MarkdownParseTest {
         assertEquals(links9, links8);
     }
 
+    @Test 
     public void snippet2Test() throws IOException {
         Path fileName5 = Path.of("snippet2.md");
         String contents5 = Files.readString(fileName5);
@@ -78,9 +71,11 @@ public class MarkdownParseTest {
         ArrayList<String> links11 = new ArrayList<String>();
         links11.add("a.com");
         links11.add("a.com(())");
+        links11.add("example.com");
         assertEquals(links11, links10);
     }
 
+    @Test 
     public void snippet3Test() throws IOException {
         Path fileName6 = Path.of("snippet3.md");
         String contents6 = Files.readString(fileName6);
