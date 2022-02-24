@@ -54,9 +54,9 @@ public class MarkdownParseTest {
         String contents4 = Files.readString(fileName4);
         ArrayList<String> links8 = MarkdownParse.getLinks(contents4);
         ArrayList<String> links9 = new ArrayList<String>();
+        links9.add("url.com");
         links9.add("`google.com");
         links9.add("google.com");
-        links9.add("ucsd.edu");
         assertEquals(links9, links8);  
     }
 
