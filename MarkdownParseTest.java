@@ -78,7 +78,6 @@ public class MarkdownParseTest {
         ArrayList<String> links11 = new ArrayList<String>();
         links11.add("a.com");
         links11.add("a.com(())");
-        links11.add("example.com");
         assertEquals(links11, links10);
     }
 
