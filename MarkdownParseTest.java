@@ -49,5 +49,30 @@ public class MarkdownParseTest {
         links7.add("https://something.com");
         links7.add("some-page.html");
         assertEquals(links7, links6);
+
+        Path fileName4 = Path.of("snippet1.md");
+        String contents4 = Files.readString(fileName4);
+        ArrayList<String> links8 = MarkdownParse.getLinks(contents4);
+        ArrayList<String> links9 = new ArrayList<String>();
+        links9.add("`google.com");
+        links9.add("google.com");
+        links9.add("ucsd.edu");
+        assertEquals(links9, links8);
+
+        Path fileName5 = Path.of("snippet2.md");
+        String contents5 = Files.readString(fileName5);
+        ArrayList<String> links10 = MarkdownParse.getLinks(contents5);
+        ArrayList<String> links11 = new ArrayList<String>();
+        links11.add("a.com");
+        links11.add("a.com(())");
+        links11.add("example.com");
+        assertEquals(links11, links10);
+
+        Path fileName6 = Path.of("snippet3.md");
+        String contents6 = Files.readString(fileName6);
+        ArrayList<String> links12 = MarkdownParse.getLinks(contents6);
+        ArrayList<String> links13 = new ArrayList<String>();
+        links13.add("https://ucsd-cse15l-w22.github.io/");
+        assertEquals(links13, links12);
     }
 }
