@@ -19,10 +19,14 @@ public class MarkdownParse {
                 int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
                 int openParen = markdown.indexOf("(", nextCloseBracket);
                 int closeParen = markdown.indexOf(")", openParen);
+                int carrot = markdown.indexOf("<");
                 if( nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1) {
                     break;
                 }
                 if( markdown.charAt(nextOpenBracket-1) == '!') {
+
+                }
+                else if( carrot > nextOpenBracket && carrot < nextCloseBracket) {
 
                 }
                 else if( nextCloseBracket + 1 == openParen) {
